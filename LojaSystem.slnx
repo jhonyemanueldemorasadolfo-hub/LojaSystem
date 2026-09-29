@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="LojaSystem.API/LojaSystem.API.csproj" Id="13af79d2-5588-4bfd-a1c9-13b9e80f2bfb" />
+  <Project Path="LojaSystem/LojaSystem.csproj" />
+</Solution>

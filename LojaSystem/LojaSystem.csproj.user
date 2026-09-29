@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_LastSelectedProfileId>C:\Users\Jhony\Desktop\projetos\LojaSystem\LojaSystem\Properties\PublishProfiles\ClickOnceProfile.pubxml</_LastSelectedProfileId>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="Paginas\PaginaProduto\CadastroProduto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Paginas\Menus\CadastroProduto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Paginas\Menus\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Paginas\PaginaProduto\ListagemProdutos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>     
+	  <ApplicationHighDpiMode>SystemAware</ApplicationHighDpiMode>
+	  <ForceDesignerDpiUnaware>true</ForceDesignerDpiUnaware>
+	  <ApplicationIcon>loja-icon-svg-png-download-2387483.ico</ApplicationIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Paginas\Classes\**" />
+    <EmbeddedResource Remove="Paginas\Classes\**" />
+    <None Remove="Paginas\Classes\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="loja-icon-svg-png-download-2387483.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HartUI.Winforms" Version="2026.8.24" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LojaSystem.API\LojaSystem.API.csproj" />
+  </ItemGroup>
+
+</Project>
