@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using LojaSystem.Models;
+using System.Linq;
 
 namespace LojaSystem.Paginas.PaginaProduto
 {
@@ -18,15 +19,16 @@ namespace LojaSystem.Paginas.PaginaProduto
         {
             InitializeComponent();
             InicializarSupabase();
-            
+            CarregarProd();
         }
 
         private async void InicializarSupabase()
-        {s
+        {
 
-            var (key, url) = ConfigService.ObterCredenciaisSupabase();
+            var (url, key) = ConfigService.ObterCredenciaisSupabase();
 
-            var supabase = new Supabase.Client(url, key);
+            _supabase = new Supabase.Client(url, key);
+            await _supabase.InitializeAsync();
         }
 
         private void ListagemProdutos_Load(object sender, EventArgs e)
