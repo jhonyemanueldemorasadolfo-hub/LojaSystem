@@ -39,7 +39,6 @@
             txtCategoria = new HartUI.Controls.cuiTextBox();
             txtPreco = new HartUI.Controls.cuiTextBox();
             txtQuantidadeEstoque = new HartUI.Controls.cuiTextBox();
-            AvisoLabel = new HartUI.Controls.cuiLabel();
             SuspendLayout();
             // 
             // cuiLabel1
@@ -211,6 +210,7 @@
             txtNome.TabIndex = 9;
             txtNome.TextOffset = new Size(0, 0);
             txtNome.UnderlinedStyle = true;
+            txtNome.ContentChanged += txtNome_ContentChanged;
             // 
             // txtCategoria
             // 
@@ -225,7 +225,7 @@
             txtCategoria.ImageExpand = new Point(0, 0);
             txtCategoria.ImageOffset = new Point(0, 0);
             txtCategoria.ImageTextSpacing = 8;
-            txtCategoria.Location = new Point(448, 192);
+            txtCategoria.Location = new Point(448, 200);
             txtCategoria.Margin = new Padding(4);
             txtCategoria.Multiline = false;
             txtCategoria.Name = "txtCategoria";
@@ -254,7 +254,7 @@
             txtPreco.ImageExpand = new Point(0, 0);
             txtPreco.ImageOffset = new Point(0, 0);
             txtPreco.ImageTextSpacing = 8;
-            txtPreco.Location = new Point(448, 256);
+            txtPreco.Location = new Point(448, 272);
             txtPreco.Margin = new Padding(4);
             txtPreco.Multiline = false;
             txtPreco.Name = "txtPreco";
@@ -283,7 +283,7 @@
             txtQuantidadeEstoque.ImageExpand = new Point(0, 0);
             txtQuantidadeEstoque.ImageOffset = new Point(0, 0);
             txtQuantidadeEstoque.ImageTextSpacing = 8;
-            txtQuantidadeEstoque.Location = new Point(448, 320);
+            txtQuantidadeEstoque.Location = new Point(448, 352);
             txtQuantidadeEstoque.Margin = new Padding(4);
             txtQuantidadeEstoque.Multiline = false;
             txtQuantidadeEstoque.Name = "txtQuantidadeEstoque";
@@ -299,24 +299,11 @@
             txtQuantidadeEstoque.TextOffset = new Size(0, 0);
             txtQuantidadeEstoque.UnderlinedStyle = true;
             // 
-            // AvisoLabel
-            // 
-            AvisoLabel.Content = "Avisos";
-            AvisoLabel.ForeColor = Color.White;
-            AvisoLabel.Location = new Point(448, 400);
-            AvisoLabel.Margin = new Padding(4, 3, 4, 3);
-            AvisoLabel.Name = "AvisoLabel";
-            AvisoLabel.Size = new Size(245, 54);
-            AvisoLabel.TabIndex = 13;
-            AvisoLabel.TabStop = false;
-            AvisoLabel.VerticalAlignment = StringAlignment.Center;
-            // 
             // CadastrarProduto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 23, 42);
-            Controls.Add(AvisoLabel);
             Controls.Add(txtQuantidadeEstoque);
             Controls.Add(txtPreco);
             Controls.Add(txtCategoria);
@@ -330,6 +317,7 @@
             Controls.Add(cuiPanel1);
             Name = "CadastrarProduto";
             Size = new Size(985, 535);
+            Load += CadastrarProduto_Load;
             ResumeLayout(false);
         }
 
@@ -346,6 +334,5 @@
         private HartUI.Controls.cuiTextBox txtCategoria;
         private HartUI.Controls.cuiTextBox txtPreco;
         private HartUI.Controls.cuiTextBox txtQuantidadeEstoque;
-        private HartUI.Controls.cuiLabel AvisoLabel;
     }
 }

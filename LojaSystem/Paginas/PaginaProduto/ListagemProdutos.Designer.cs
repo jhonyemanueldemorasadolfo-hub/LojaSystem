@@ -31,6 +31,8 @@
             cuiPanel1 = new HartUI.Controls.cuiPanel();
             cuiButton1 = new HartUI.Controls.cuiButton();
             cuiLabel1 = new HartUI.Controls.cuiLabel();
+            DGVListagemProdutos = new DataGridView();
+            ((System.ComponentModel.ISupportInitialize)DGVListagemProdutos).BeginInit();
             SuspendLayout();
             // 
             // cuiPanel1
@@ -98,17 +100,30 @@
             cuiLabel1.TabStop = false;
             cuiLabel1.VerticalAlignment = StringAlignment.Center;
             // 
+            // DGVListagemProdutos
+            // 
+            DGVListagemProdutos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            DGVListagemProdutos.BackgroundColor = Color.FromArgb(30, 41, 59);
+            DGVListagemProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVListagemProdutos.Location = new Point(176, 16);
+            DGVListagemProdutos.Name = "DGVListagemProdutos";
+            DGVListagemProdutos.Size = new Size(800, 500);
+            DGVListagemProdutos.TabIndex = 4;
+            DGVListagemProdutos.CellContentClick += DGVListagemProdutos_CellContentClick;
+            // 
             // ListagemProdutos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 23, 42);
+            Controls.Add(DGVListagemProdutos);
             Controls.Add(cuiLabel1);
             Controls.Add(cuiButton1);
             Controls.Add(cuiPanel1);
             Name = "ListagemProdutos";
             Size = new Size(985, 535);
             Load += ListagemProdutos_Load;
+            ((System.ComponentModel.ISupportInitialize)DGVListagemProdutos).EndInit();
             ResumeLayout(false);
         }
 
@@ -117,5 +132,6 @@
         private HartUI.Controls.cuiPanel cuiPanel1;
         private HartUI.Controls.cuiButton cuiButton1;
         private HartUI.Controls.cuiLabel cuiLabel1;
+        private DataGridView DGVListagemProdutos;
     }
 }

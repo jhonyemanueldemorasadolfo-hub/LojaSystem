@@ -4,6 +4,9 @@
     <_LastSelectedProfileId>C:\Users\Jhony\Desktop\projetos\LojaSystem\LojaSystem\Properties\PublishProfiles\ClickOnceProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Update="Paginas\PaginaProduto\AtualizarProduto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Paginas\PaginaProduto\CadastroProduto.cs">
       <SubType>UserControl</SubType>
     </Compile>

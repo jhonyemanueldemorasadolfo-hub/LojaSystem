@@ -8,6 +8,7 @@ namespace LojaSystem
         public FundoPrincipal()
         {
             InitializeComponent();
+
         }
 
 

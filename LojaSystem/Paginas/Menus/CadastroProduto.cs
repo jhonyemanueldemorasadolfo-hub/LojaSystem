@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using LojaSystem.Paginas.PaginaProduto;
+using LojaSystem.Paginas.Cadastrar;
  
 
 namespace LojaSystem.Paginas.cadastro_produto
@@ -24,11 +25,11 @@ namespace LojaSystem.Paginas.cadastro_produto
 
         private void cuiButton1_Click(object sender, EventArgs e)
         {
-            CadastroProduto cadastroProduto = new CadastroProduto();
+            CadastrarProduto cadastrarProduto = new CadastrarProduto();
 
-            cadastroProduto.Dock = DockStyle.Fill;
-            Controls.Add(cadastroProduto);
-            cadastroProduto.BringToFront();
+            cadastrarProduto.Dock = DockStyle.Fill;
+            Controls.Add(cadastrarProduto);
+            cadastrarProduto.BringToFront();
         }
 
         private void cuiButton2_Click(object sender, EventArgs e)
@@ -43,6 +44,15 @@ namespace LojaSystem.Paginas.cadastro_produto
         private void CadastroProduto_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void cuiButton1_Click_1(object sender, EventArgs e)
+        {
+            AtualizarProduto atualizarProduto = new AtualizarProduto();
+
+            atualizarProduto.Dock = DockStyle.Fill;
+            Controls.Add(atualizarProduto);
+            atualizarProduto.BringToFront();
         }
     }
 }

@@ -1,23 +1,38 @@
-﻿using System;
+﻿using Supabase;
+using Supabase.Postgrest.Attributes;
+using Supabase.Postgrest.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using LojaSystem.API.Repositories;
-using LojaSystem.API.Models;
+using LojaSystem.Models;
 
 namespace LojaSystem.Paginas.Cadastrar
 {
     public partial class CadastrarProduto : UserControl
     {
+
+        private Supabase.Client _supabase;
+
         public CadastrarProduto()
         {
             InitializeComponent();
+            InicializarSupabase();
         }
 
-        private void BotaoCadastrarProduto_Click(object sender, EventArgs e)
+        private async void InicializarSupabase()
+        {
+
+            var (url, key) = ConfigService.ObterCredenciaisSupabase();
+
+            // Inicializa o cliente com os dados vindos do appsettings.json
+            var supabaseClient = new Supabase.Client(url, key);
+        }
+
+        private async void BotaoCadastrarProduto_Click(object sender, EventArgs e)
         {
             // 1. Valida se há campos vazios
             if (string.IsNullOrWhiteSpace(txtNome.Text) ||
@@ -27,6 +42,13 @@ namespace LojaSystem.Paginas.Cadastrar
             {
                 MessageBox.Show("Por favor, preencha todos os campos antes de cadastrar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; // STOP! Impede que o código continue e dê erro no Parse
+            }
+
+            if(txtNome.Text.Any(char.IsDigit))
+            {
+                MessageBox.Show("O nome não pode conter numero!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNome.Focus();
+                return;
             }
 
             // 2. Valida se Preço e Estoque são números válidos
@@ -44,34 +66,27 @@ namespace LojaSystem.Paginas.Cadastrar
                 return;
             }
 
-            // 3. Monta o objeto Produto com os valores já convertidos
-            Produto produto = new Produto
+            try
             {
-                nome = txtNome.Text.Trim(),
-                categoria = txtCategoria.Text.Trim(),
-                preco = precoConvertido,
-                estoque = estoqueConvertido
-            };
+                Produto produto = new Produto
+                {
+                    Nome = txtNome.Text,
+                    Preco = Convert.ToDecimal(txtPreco.Text),
+                    Categoria = txtCategoria.Text,
+                       Estoque = Convert.ToInt32(txtQuantidadeEstoque.Text)
+                };
 
-            // 4. Executa o cadastro na DAO
-            ProdutoDAO produtoDAO = new ProdutoDAO();
-            bool sucesso = produtoDAO.Cadastrar(produto);
+                 await _supabase.From<Produto>().Insert(produto);
+                MessageBox.Show("Produto Inserido!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
-            if (sucesso)
+            }catch(Exception ex)
             {
-                MessageBox.Show("Produto cadastrado com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                // Limpa os campos após cadastrar
-                /*txtNome.Clear();
-                txtCategoria.Clear();
-                txtPreco.Clear();
-                txtQuantidadeEstoque.Clear();*/
-                txtNome.Focus();
+                MessageBox.Show($"Erro ao salvar no Supabase: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else
-            {
-                MessageBox.Show("Erro ao cadastrar o produto no banco de dados.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+   
+
+ 
         }
 
         private void cuiButton1_Click(object sender, EventArgs e)
@@ -85,6 +100,16 @@ namespace LojaSystem.Paginas.Cadastrar
                 this.Parent?.Controls.Remove(this);
                 this.Dispose();
             }
+        }
+
+        private void CadastrarProduto_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNome_ContentChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
