@@ -29,7 +29,8 @@ namespace LojaSystem.Paginas.Cadastrar
             var (url, key) = ConfigService.ObterCredenciaisSupabase();
 
             // Inicializa o cliente com os dados vindos do appsettings.json
-            var supabaseClient = new Supabase.Client(url, key);
+            _supabase = new Supabase.Client(url, key);
+            await _supabase.InitializeAsync();
         }
 
         private async void BotaoCadastrarProduto_Click(object sender, EventArgs e)

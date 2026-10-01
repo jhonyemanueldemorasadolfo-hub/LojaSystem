@@ -16,6 +16,9 @@
     <Compile Update="Paginas\Menus\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Paginas\PaginaProduto\DeletarProduto.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Paginas\PaginaProduto\ListagemProdutos.cs">
       <SubType>UserControl</SubType>
     </Compile>

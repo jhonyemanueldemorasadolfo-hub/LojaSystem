@@ -270,6 +270,7 @@
             cuiButton4.TextAlignment = StringAlignment.Center;
             cuiButton4.TextPadding = 12;
             cuiButton4.TextSpacing = 2;
+            cuiButton4.Click += cuiButton4_Click;
             // 
             // CadastroProduto
             // 

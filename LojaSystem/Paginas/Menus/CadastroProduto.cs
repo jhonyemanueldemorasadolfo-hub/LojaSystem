@@ -54,5 +54,14 @@ namespace LojaSystem.Paginas.cadastro_produto
             Controls.Add(atualizarProduto);
             atualizarProduto.BringToFront();
         }
+
+        private void cuiButton4_Click(object sender, EventArgs e)
+        {
+            DeletarProduto deletar = new DeletarProduto();
+
+            deletar.Dock = DockStyle.Fill;
+            Controls.Add(deletar);
+            deletar.BringToFront();
+        }
     }
 }
