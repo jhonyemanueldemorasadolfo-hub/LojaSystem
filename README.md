@@ -1,71 +1,47 @@
 # 🛒 LojaSystem
 
-> Sistema desktop para gerenciamento comercial e controle de estoque, desenvolvido em C# e integrado ao Supabase.
-
-[![C#](https://img.shields.io/badge/Language-C%23-blue.svg)](https://learn.microsoft.com/dotnet/csharp/)
-[![.NET](https://img.shields.io/badge/Framework-.NET%2010-purple.svg)](https://dotnet.microsoft.com/)
-[![WinUI 3](https://img.shields.io/badge/UI-WinUI%203-informational.svg)](https://learn.microsoft.com/windows/apps/winui/)
-[![Supabase](https://img.shields.io/badge/Backend-Supabase-green.svg)](https://supabase.com/)
-[![PostgreSQL](https://img.shields.io/badge/Database-PostgreSQL-blue.svg)](https://www.postgresql.org/)
-[![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow.svg)]()
+O **LojaSystem** é um sistema de gestão de produtos desenvolvido para garantir uma integração segura, estável e eficiente com base de dados na nuvem via **Supabase**.
 
 ---
 
-## 📌 Sobre o Projeto
+## 🛠️ Tecnologias e Ferramentas Utilizadas
 
-O **LojaSystem** é um sistema desktop para gerenciamento comercial e controle de estoque.
-
-O projeto está sendo desenvolvido utilizando **C# e WinUI 3**, com o **Supabase** como plataforma de backend e banco de dados.
-
-O principal objetivo é desenvolver uma aplicação completa, praticando conceitos de desenvolvimento de software, integração com serviços externos, manipulação de dados, organização de código e controle de versão.
-
----
-
-## 🎯 Objetivos
-
-- Desenvolver uma aplicação desktop funcional.
-- Praticar desenvolvimento com C#.
-- Trabalhar com interfaces utilizando XAML e WinUI 3.
-- Integrar a aplicação com o Supabase.
-- Implementar operações CRUD.
-- Trabalhar com banco de dados.
-- Praticar organização e manutenção de projetos.
-- Utilizar Git e GitHub durante o desenvolvimento.
+- **Linguagem & Framework:** C# / .NET (WinUI / Windows Forms / Uno Platform)
+- **Backend & Database:** [Supabase](https://supabase.com/) (PostgreSQL/MySQL BaaS)
+- **SDK:** `supabase-csharp`
+- **Gestão de Configurações:** `Microsoft.Extensions.Configuration` (`appsettings.json`)
+- **Controlo de Versão:** Git & GitHub
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🔒 Segurança e Boas Práticas
 
-### 💻 Aplicação
-
-- **C#**
-- **.NET 10**
-- **WinUI 3**
-- **XAML**
-
-### ☁️ Backend e Dados
-
-- **Supabase**
-- **PostgreSQL**
-- **REST API**
-- **JSON**
-
-### 🔧 Ferramentas
-
-- **Visual Studio**
-- **Git**
-- **GitHub**
-- **Supabase Dashboard**
+- **Gestão de Credenciais:** As chaves de API (`Url` e `Anon Key`) do Supabase são mantidas isoladas no ficheiro local `appsettings.json`, prevenindo a exposição acidental de credenciais sensíveis.
+- **Proteção do Histórico Git:** O ficheiro de configuração local está devidamente ignorado no `.gitignore`.
+- **Tratamento de Dados:** Validações rigorosas com `TryParse`, `Trim` e substituição de separadores decimais para evitar falhas em tempo de execução durante operações de CRUD.
 
 ---
 
-## 🏗️ Arquitetura
+## 🚀 Funcionalidades Atuais
 
-A aplicação utiliza o Supabase como camada de backend e persistência de dados.
+- [x] Conexão segura com a API do Supabase.
+- [x] **Cadastro de Produtos:** Inserção de novos registos na base de dados.
+- [x] **Listagem de Produtos:** Leitura e formatação assíncrona em grelha (`DataGridView`), com renomeação de colunas e formatação de moeda.
+- [x] **Atualização de Produtos:** Modificação de dados existentes mapeados via chave primária.
+- [x] **Remoção de Produtos:** Exclusão individual de registos com confirmação prévia de utilizador.
 
-```mermaid
-graph TD
-    A[🖥️ WinUI 3 / C#] -->|HTTP / JSON| B[☁️ Supabase]
-    B --> C[🔐 Autenticação]
-    B --> D[🌐 API]
-    B --> E[(🗄️ PostgreSQL)]
+---
+
+## 🔮 Futuras Atualizações e Roadmap
+
+- [ ] **Aplicação Mobile (App):** Expansão do sistema para ecossistema mobile (Android/iOS) integrando com o mesmo backend do Supabase para sincronização de dados em tempo real.
+- [ ] Implementação de autenticação de utilizadores e permissões por perfil (RLS).
+- [ ] Relatórios de vendas e controlo avançado de stock.
+
+---
+
+## ⚙️ Como Configurar o Projeto Localmente
+
+1. Clona o repositório para a tua máquina:
+   ```bash
+   git clone [https://github.com/teu-usuario/LojaSystem.git](https://github.com/teu-usuario/LojaSystem.git)
