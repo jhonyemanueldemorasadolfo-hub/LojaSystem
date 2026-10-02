@@ -60,7 +60,13 @@ namespace LojaSystem.Paginas.PaginaProduto
 
         private void cuiButton1_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            var result = MessageBox.Show("Deseja realmente sair?", "Mensagem", MessageBoxButtons.YesNo, MessageBoxIcon.None);
+
+            if(result == DialogResult.Yes)
+            {
+                this.Parent?.Controls.Remove(this);
+                this.Dispose();
+            }
         }
     }
 }

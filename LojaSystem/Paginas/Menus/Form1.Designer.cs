@@ -34,7 +34,6 @@
             cuiButton1 = new HartUI.Controls.cuiButton();
             cuiButton2 = new HartUI.Controls.cuiButton();
             cuiButton3 = new HartUI.Controls.cuiButton();
-            cuiButton5 = new HartUI.Controls.cuiButton();
             cuiLabel2 = new HartUI.Controls.cuiLabel();
             SuspendLayout();
             // 
@@ -141,6 +140,7 @@
             cuiButton2.TextAlignment = StringAlignment.Center;
             cuiButton2.TextPadding = 12;
             cuiButton2.TextSpacing = 2;
+            cuiButton2.Click += cuiButton2_Click;
             // 
             // cuiButton3
             // 
@@ -181,45 +181,6 @@
             cuiButton3.TextSpacing = 2;
             cuiButton3.Click += cuiButton3_Click;
             // 
-            // cuiButton5
-            // 
-            cuiButton5.BackColor = Color.FromArgb(30, 41, 59);
-            cuiButton5.CheckButton = false;
-            cuiButton5.Checked = false;
-            cuiButton5.CheckedBackground = Color.FromArgb(61, 24, 226);
-            cuiButton5.CheckedForeColor = Color.White;
-            cuiButton5.CheckedImageTint = Color.White;
-            cuiButton5.CheckedOutline = Color.FromArgb(61, 24, 226);
-            cuiButton5.Content = "Consultas";
-            cuiButton5.DialogResult = DialogResult.None;
-            cuiButton5.Font = new Font("Microsoft Sans Serif", 9.75F);
-            cuiButton5.ForeColor = Color.White;
-            cuiButton5.HoverBackground = Color.FromArgb(96, 165, 250);
-            cuiButton5.HoverForeColor = Color.White;
-            cuiButton5.HoverImageTint = Color.DimGray;
-            cuiButton5.HoverOutline = Color.FromArgb(32, 128, 128, 128);
-            cuiButton5.Image = null;
-            cuiButton5.ImageExpand = new Point(0, 0);
-            cuiButton5.Location = new Point(16, 328);
-            cuiButton5.Name = "cuiButton5";
-            cuiButton5.NormalBackground = Color.FromArgb(59, 130, 246);
-            cuiButton5.NormalForeColor = Color.White;
-            cuiButton5.NormalImageTint = Color.Black;
-            cuiButton5.NormalOutline = Color.FromArgb(64, 128, 128, 128);
-            cuiButton5.OutlineThickness = 1F;
-            cuiButton5.Padding = new Padding(12);
-            cuiButton5.PressedBackground = Color.FromArgb(37, 99, 235);
-            cuiButton5.PressedForeColor = Color.FromArgb(32, 32, 32);
-            cuiButton5.PressedImageTint = Color.FromArgb(32, 32, 32);
-            cuiButton5.PressedOutline = Color.FromArgb(64, 128, 128, 128);
-            cuiButton5.Rounding = new Padding(16);
-            cuiButton5.Size = new Size(144, 45);
-            cuiButton5.TabIndex = 6;
-            cuiButton5.TextAlignment = StringAlignment.Center;
-            cuiButton5.TextPadding = 12;
-            cuiButton5.TextSpacing = 2;
-            cuiButton5.Click += cuiButton5_Click;
-            // 
             // cuiLabel2
             // 
             cuiLabel2.Content = "Sistema de Gestão Loja System ";
@@ -241,7 +202,6 @@
             BackColor = Color.FromArgb(15, 23, 42);
             ClientSize = new Size(984, 561);
             Controls.Add(cuiLabel2);
-            Controls.Add(cuiButton5);
             Controls.Add(cuiButton3);
             Controls.Add(cuiButton2);
             Controls.Add(cuiButton1);
@@ -265,7 +225,6 @@
         private HartUI.Controls.cuiButton cuiButton1;
         private HartUI.Controls.cuiButton cuiButton2;
         private HartUI.Controls.cuiButton cuiButton3;
-        private HartUI.Controls.cuiButton cuiButton5;
         private HartUI.Controls.cuiLabel cuiLabel2;
     }
 }

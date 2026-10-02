@@ -11,9 +11,9 @@ using LojaSystem.Paginas.Cadastrar;
 
 namespace LojaSystem.Paginas.cadastro_produto
 {
-    public partial class CadastroProduto : UserControl
+    public partial class MenuProduto : UserControl
     {
-        public CadastroProduto()
+        public MenuProduto()
         {
             InitializeComponent();
         }

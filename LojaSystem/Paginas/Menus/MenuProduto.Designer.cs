@@ -1,6 +1,6 @@
 ﻿namespace LojaSystem.Paginas.cadastro_produto
 {
-    partial class CadastroProduto
+    partial class MenuProduto
     {
         /// <summary> 
         /// Variável de designer necessária.

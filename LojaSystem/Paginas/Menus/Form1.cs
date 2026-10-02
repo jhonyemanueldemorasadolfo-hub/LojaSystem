@@ -1,4 +1,5 @@
 using LojaSystem.Paginas.cadastro_produto;
+using LojaSystem.Paginas.Menus.PaginaCliente;
 
 namespace LojaSystem
 {
@@ -30,10 +31,10 @@ namespace LojaSystem
 
         private void cuiButton1_Click(object sender, EventArgs e)
         {
-            CadastroProduto cadastroProduto = new CadastroProduto();
+            MenuProduto cadastroProduto = new MenuProduto();
 
             cadastroProduto.Dock = DockStyle.Fill;
-    
+
             Controls.Add(cadastroProduto);
             cadastroProduto.BringToFront();
 
@@ -67,7 +68,16 @@ namespace LojaSystem
 
         private void cuiLabel2_Load(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void cuiButton2_Click(object sender, EventArgs e)
+        {
+            MenuCliente menuCliente = new MenuCliente();
+
+            menuCliente.Dock = DockStyle.Fill;
+            Controls.Add(menuCliente);
+            menuCliente.BringToFront();
         }
     }
 }
