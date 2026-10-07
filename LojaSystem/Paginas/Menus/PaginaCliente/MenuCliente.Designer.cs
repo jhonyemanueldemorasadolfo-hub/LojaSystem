@@ -113,6 +113,7 @@
             ButtonAtualizarCliente.TextAlignment = StringAlignment.Center;
             ButtonAtualizarCliente.TextPadding = 12;
             ButtonAtualizarCliente.TextSpacing = 2;
+            ButtonAtualizarCliente.Click += ButtonAtualizarCliente_Click;
             // 
             // ButtonVoltar
             // 
@@ -190,6 +191,7 @@
             ButtonListarClientes.TextAlignment = StringAlignment.Center;
             ButtonListarClientes.TextPadding = 12;
             ButtonListarClientes.TextSpacing = 2;
+            ButtonListarClientes.Click += ButtonListarClientes_Click;
             // 
             // BotaoCadastrarCliente
             // 

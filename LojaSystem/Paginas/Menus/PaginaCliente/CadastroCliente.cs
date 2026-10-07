@@ -45,6 +45,20 @@ namespace LojaSystem.Paginas.Menus.PaginaCliente
                 return;
             }
 
+            if(txtCPF.Text.Length != 11 || !txtCPF.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("O CPF deve conter exatamente 11 dígitos numéricos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtCPF.Focus();
+                return;
+            }
+
+            if(txtTelefone.Text.Length != 11 || !txtTelefone.Text.All(char.IsDigit))
+            {
+                MessageBox.Show("O telefone deve conter exatamente 11 dígitos numéricos.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTelefone.Focus();
+                return;
+            }
+
             try
             {
                 Cliente novoCliente = new Cliente

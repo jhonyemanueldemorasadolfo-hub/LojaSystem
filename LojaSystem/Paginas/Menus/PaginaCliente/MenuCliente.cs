@@ -33,5 +33,23 @@ namespace LojaSystem.Paginas.Menus.PaginaCliente
             Controls.Add(cadastroCliente);
             cadastroCliente.BringToFront();
         }
+
+        private void ButtonListarClientes_Click(object sender, EventArgs e)
+        {
+            ListarClientes listarClientes = new ListarClientes();
+
+            listarClientes.Dock = DockStyle.Fill;
+            Controls.Add(listarClientes);
+            listarClientes.BringToFront();
+        }
+
+        private void ButtonAtualizarCliente_Click(object sender, EventArgs e)
+        {
+            AtualizarCliente atualizarCliente = new AtualizarCliente();
+
+            atualizarCliente.Dock = DockStyle.Fill;
+            Controls.Add(atualizarCliente);
+            atualizarCliente.BringToFront();
+        }
     }
 }
